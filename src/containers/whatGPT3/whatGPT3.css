@@ -1,0 +1,213 @@
+/* Container */
+.wgpt3 {
+  background: -moz-radial-gradient(ellipse at 35% 0%, rgba(4, 44, 84, 1) 7%, rgba(4, 44, 84, 1) 93%, rgba(14, 172, 193, 1) 100%);
+  background: -webkit-radial-gradient(ellipse at 35% 0%, rgba(4, 44, 84, 1) 7%, rgba(4, 44, 84, 1) 93%, rgba(14, 172, 193, 1) 100%);
+  background: -o-radial-gradient(ellipse at 35% 0%, rgba(4, 44, 84, 1) 7%, rgba(4, 44, 84, 1) 93%, rgba(14, 172, 193, 1) 100%);
+  background: -ms-radial-gradient(ellipse at 35% 0%, rgba(4, 44, 84, 1) 7%, rgba(4, 44, 84, 1) 93%, rgba(14, 172, 193, 1) 100%);
+  background: radial-gradient(ellipse at 35% 0%, rgba(4, 44, 84, 1) 7%, rgba(4, 44, 84, 1) 93%, rgba(14, 172, 193, 1) 100%);
+  margin: 0 auto;          /* Centers the section */
+  margin-top: 6rem;
+  padding: 4rem 6rem;         /* Default padding for large screens */
+  width: 100%;
+  max-width: 1300px;          /* Keep original desktop dimension */
+  box-sizing: border-box;
+}
+
+/* -------- FEATURE SECTION (top) -------- */
+.wgpt3-feature {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.wgpt3-feature-title {
+  max-width: 300px;
+}
+
+.wgpt3-line {
+  width: 38px;
+  height: 4px;
+  background: linear-gradient(90deg, #ae67fa, #f49867);
+  margin-bottom: 0.5rem;
+}
+
+.wgpt3-feature-title h1 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4rem;
+}
+
+.wgpt3-feature-text p {
+  color: #81afdd;
+  line-height: 1.7;
+  font-size: 14px;
+  max-width: 650px;
+}
+
+/* -------- MID HEADING (center big text) -------- */
+.wgpt3-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 7rem 0;
+}
+
+.wgpt3-heading h1 {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 800;
+  max-width: 600px;
+  line-height: 1.2;
+}
+
+.wgpt3-heading p {
+  color: #ff8a71;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* -------- BOTTOM 3 BOXES -------- */
+.wgpt3-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-top: 10rem;
+}
+
+.wgpt3-item {
+  max-width: 300px;
+}
+
+.wgpt3-item h1 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 18px;
+}
+
+.wgpt3-item p {
+  color: #81afdd;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* -------- GRADIENT TEXT -------- */
+.gradient-text {
+  background: linear-gradient(90deg, #ae67fa 0%, #f49867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* -------- RESPONSIVE -------- */
+
+/* ============================= */
+/*      FULL RESPONSIVE SET     */
+/* ============================= */
+
+/* Large desktop screens */
+@media (max-width: 1280px) {
+  .wgpt3 {
+    max-width: 1100px;
+    padding: 3.5rem 3rem;
+  }
+}
+
+/* Tablets / small laptops */
+@media (max-width: 1024px) {
+  .wgpt3 {
+    max-width: 800px;
+    padding: 3rem 2rem;
+  }
+  .wgpt3-heading
+  .wgpt3-feature-text p {
+    max-width: 100%;
+  }
+}
+
+/* Landscape tablets (important) */
+@media (max-width: 900px) {
+
+  .wgpt3-feature,
+  .wgpt3-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .wgpt3-heading {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .wgpt3-item {
+    max-width: 100%;
+  }
+}
+
+/* iPad portrait / mid-size tablets */
+@media (max-width: 768px) {
+  .wgpt3 {
+    max-width: 650px;
+    padding: 2.5rem 1.8rem;
+  }
+
+  .wgpt3-heading h1 {
+    font-size: 1.9rem;
+  }
+
+  .wgpt3-feature-title h1 {
+    font-size: 20px;
+  }
+}
+
+/* Large phones */
+@media (max-width: 650px) {
+  .wgpt3 {
+    max-width: 500px;
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Medium phones */
+@media (max-width: 500px) {
+  .wgpt3 {
+    max-width: 430px;
+    padding: 1.8rem 1.2rem;
+  }
+
+  .wgpt3-heading h1 {
+    font-size: 1.7rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  .wgpt3 {
+    max-width: 360px;
+    padding: 1.5rem 1rem;
+  }
+
+  .wgpt3-feature-title h1,
+  .wgpt3-item h1 {
+    font-size: 16px;
+  }
+
+  .wgpt3-feature-text p,
+  .wgpt3-item p {
+    font-size: 13px;
+  }
+}
+
+/* Very small phones (Android mini) */
+@media (max-width: 360px) {
+  .wgpt3 {
+    max-width: 300px;
+    padding: 1.2rem 0.8rem;
+  }
+
+  .wgpt3-heading h1 {
+    font-size: 1.5rem;
+  }
+}

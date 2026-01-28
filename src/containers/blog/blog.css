@@ -1,0 +1,272 @@
+/* ==============================================
+   LESSON 1: BASE STYLES & CONTAINER SETUP
+   ============================================== */
+
+.blog-section {
+  /* Dark background matching your design */
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ==============================================
+   LESSON 2: RESPONSIVE TYPOGRAPHY WITH CLAMP
+   clamp(min, preferred, max) - scales smoothly!
+   ============================================== */
+
+.blog-header h1 {
+  /* This scales from 2rem (mobile) to 3.5rem (desktop) */
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+  
+  /* Gradient text effect */
+  background: linear-gradient(90deg, #AE67FA 0%, #F49867 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==============================================
+   LESSON 3: CSS GRID FOR RESPONSIVE LAYOUT
+   Grid automatically adjusts columns based on space
+   ============================================== */
+
+.blog-container {
+  display: grid;
+  /* One large column on left, 2x2 grid on right */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+/* ==============================================
+   LESSON 4: FEATURED POST (LEFT SIDE)
+   Takes 2 rows to make it bigger
+   ============================================== */
+
+.blog-featured {
+  /* Spans 2 rows to be taller than others */
+  grid-row: span 2;
+  display: flex;
+}
+
+.featured-card {
+  height: 100%;
+}
+
+/* ==============================================
+   LESSON 5: GRID FOR SMALLER POSTS (RIGHT SIDE)
+   No need for separate grid - part of main container
+   ============================================== */
+
+.blog-grid {
+  /* Takes up remaining 2 columns and 2 rows (2x2 grid) */
+  grid-column: span 2;
+  grid-row: span 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* ==============================================
+   LESSON 6: BLOG CARD STYLING
+   ============================================== */
+
+.blog-card {
+  background: #042c54;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.blog-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #021b34;
+}
+
+/* Featured card image - taller */
+.featured-card .blog-image {
+  height: 350px;
+}
+
+.blog-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-image img {
+  transform: scale(1.1);
+}
+
+.blog-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-date {
+  color: #fff;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.blog-title {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.4;
+  margin-bottom: 3rem;
+  flex: 1;
+}
+
+.blog-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+  text-align: left;
+  background: none;
+  border: none;
+}
+
+.blog-link:hover {
+  color: #FF4820;
+  cursor: pointer;
+}
+
+/* ==============================================
+   LESSON 7: TABLET BREAKPOINT (768px - 1024px)
+   Layout starts to stack
+   ============================================== */
+
+@media screen and (max-width: 1024px) {
+  .blog-container {
+    /* Stack featured post on top, then 2x2 grid below */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .blog-featured {
+    grid-row: auto;
+  }
+  
+  .blog-grid {
+    grid-column: 1;
+    grid-row: auto;
+    /* Keep 2 columns on tablets */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+/* ==============================================
+   LESSON 8: MOBILE BREAKPOINT (max 768px)
+   Single column layout
+   ============================================== */
+
+@media screen and (max-width: 768px) {
+  .blog-section {
+    padding: 2rem 1rem;
+  }
+  
+  .blog-header h1 {
+    margin-bottom: 2rem;
+  }
+
+  .blog-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .blog-grid {
+    /* Single column on mobile */
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .blog-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* ==============================================
+   LESSON 9: SMALL MOBILE (max 480px)
+   Optimize for tiny screens
+   ============================================== */
+
+@media screen and (max-width: 480px) {
+  .blog-section {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .blog-container {
+    gap: 1rem;
+  }
+  
+  .blog-content {
+    padding: 1rem;
+  }
+  
+  .blog-image {
+    height: 150px;
+  }
+}
+
+/* ==============================================
+   LESSON 10: LARGE SCREENS (min 1400px)
+   Maintain same 1 large + 2x2 layout
+   ============================================== */
+
+@media screen and (min-width: 1400px) {
+  .blog-section {
+    max-width: 1600px;
+    padding: 5rem 3rem;
+  }
+  
+  .blog-container {
+    /* Keep the same 3-column structure */
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .blog-grid {
+    gap: 2.5rem;
+  }
+}
+
+/* ==============================================
+   KEY RESPONSIVE TECHNIQUES SUMMARY:
+   
+   1. CLAMP() - Fluid typography that scales smoothly
+      clamp(min, preferred, max)
+   
+   2. CSS GRID - Auto-adjusting columns
+      grid-template-columns: repeat(auto-fit, minmax(min, 1fr))
+   
+   3. FLEXBOX - Flexible container alignment
+      display: flex; flex-direction: column;
+   
+   4. MEDIA QUERIES - Different layouts per screen size
+      @media screen and (max-width: XXXpx)
+   
+   5. RELATIVE UNITS - Use rem, %, vw instead of px
+      Makes scaling automatic
+   
+   6. MAX-WIDTH - Prevents content from stretching too wide
+      max-width: 1400px; margin: 0 auto;
+   
+   ============================================== */

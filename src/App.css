@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: var(--font-family);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background: var(--color-bg);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+.gradient__bg {
+    /* Multiple radial gradients create spotlight effects */
+    background: 
+        /* Spotlight 1 - Top left (main) */
+        radial-gradient(circle at 0% 0%, rgba(0, 40, 83, 1) 0%, transparent 50%),
+        
+        /* Spotlight 2 - Top right */
+        radial-gradient(circle at 100% 0%, rgba(4, 44, 84, 0.8) 0%, transparent 50%),
+        
+        /* Spotlight 3 - Middle left */
+        radial-gradient(circle at 0% 50%, rgba(33, 36, 84, 0.6) 0%, transparent 40%),
+        
+        /* Spotlight 4 - Middle right */
+        radial-gradient(circle at 100% 50%, rgba(23, 43, 77, 0.5) 0%, transparent 45%),
+        
+        /* Spotlight 5 - Bottom left */
+        radial-gradient(circle at 0% 100%, rgba(15, 35, 65, 0.7) 0%, transparent 50%),
+        
+        /* Spotlight 6 - Bottom right */
+        radial-gradient(circle at 100% 100%, rgba(10, 30, 60, 0.6) 0%, transparent 50%),
+        
+        /* Base dark background */
+        linear-gradient(180deg, rgba(4, 12, 24, 1) 0%, rgba(4, 12, 24, 1) 100%);
+    
+    
+    
+    /* Fixed attachment keeps spotlights in place during scroll */
+    background-attachment: fixed;
+    
+    /* Fallback for older browsers */
+    background-color: rgba(4, 12, 24, 1);
+}
+
+
+.gradient__text {
+     background: var(--gradient-text);  
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+     background-clip: text;
+}
+
+.section__padding {
+    padding: 4rem 6rem;
+}
+
+.section__margin {
+    padding: 4rem 6rem;
+}
+
+.scale-up-center {
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+@media screen and (max-width :700px) {
+    .section__padding {
+        padding: 4rem;
+    }
+
+    .section__margin {
+        margin: 4rem;
+    }
+    
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media screen and (max-width :550px) {
+    .section__padding {
+        padding: 4rem 2rem;
+    }
+
+    .section__margin {
+        margin: 4rem  2rem;
+    }
+    
 }

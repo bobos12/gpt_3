@@ -1,0 +1,196 @@
+/* ----------------------------------- */
+/* Modern Responsive Navbar + Menu     */
+/* ----------------------------------- */
+
+.gpt3_navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 4.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 50;
+}
+
+/* Links row */
+.gpt3_navbar-links {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.gpt3_navbar-links_logo {
+  margin-right: clamp(3rem, 6vw, 10rem);
+}
+
+.gpt3_navbar-links_logo img {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+}
+
+.gpt3_navbar-links_container {
+  display: flex;
+  gap: 2.4rem;
+}
+
+/* Right-side sign buttons */
+.gpt3_navbar-sign {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Typography */
+.gpt3_navbar-links_container p,
+.gpt3_navbar-sign p,
+.gpt3_navbar-sign button {
+  color: #fff;
+  font-weight: 500;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+/* CTA button */
+.gpt3_navbar-sign button,
+.gpt3_navbar-menu_container button {
+  padding: 0.55rem 1.2rem;
+  background: #ff4820;
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.gpt3_navbar-sign button:hover {
+  background: #e03818;
+  transform: translateY(-1px);
+}
+
+/* ---------------------- */
+/*     Mobile Menu Icon   */
+/* ---------------------- */
+
+.gpt3_navbar-menu {
+  display: none;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.gpt3_navbar-menu svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+  transition: 0.3s;
+}
+
+.gpt3_navbar-menu:hover svg {
+  opacity: 0.7;
+}
+
+/* ---------------------- */
+/*     Menu Dropdown      */
+/* ---------------------- */
+
+.gpt3_navbar-menu_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  position: absolute;
+  top: 70px;
+  right: 30px;
+
+  width: 240px;
+
+  background: rgba(15, 27, 60, 0.75);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+
+  padding: 1.8rem;
+  border-radius: 12px;
+
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+
+  animation: slideDown 0.25s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.gpt3_navbar-menu_container-links {
+  width: 100%;
+}
+
+.gpt3_navbar-menu_container-links p {
+  color: #fff;
+  font-size: 17px;
+  padding: 0.6rem 0;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 6px;
+}
+
+.gpt3_navbar-menu_container-links p:hover {
+  background: rgba(255, 255, 255, 0.1);
+  padding-left: 8px;
+}
+
+/* Sign In + Sign Up inside menu */
+.gpt3_navbar-menu_container-links-sign {
+  width: 100%;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+}
+
+.gpt3_navbar-menu_container-links-sign p {
+  margin-bottom: 0.7rem;
+}
+
+/* ---------------------- */
+/*     RESPONSIVE RULES   */
+/* ---------------------- */
+
+@media screen and (max-width: 1200px) {
+  .gpt3_navbar-links_container {
+    display: none;
+  }
+  .gpt3_navbar-menu {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gpt3_navbar {
+    padding: 1.6rem 2.5rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .gpt3_navbar {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .gpt3_navbar-sign {
+    display: none;
+  }
+
+  .gpt3_navbar-menu_container {
+    right: 10px;
+    width: 210px;
+  }
+}

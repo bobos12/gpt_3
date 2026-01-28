@@ -1,0 +1,274 @@
+/* header.css */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 6rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.left {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.main-title {
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  display: inline-block;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  letter-spacing: -0.04em;
+}
+
+.main-subtitle {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.input-container {
+  display: flex;
+  align-items: stretch;
+  width: 100%;       /* full width of parent */
+  max-width: 500px;  /* optional, keep input reasonable */
+  gap: 0;
+  margin: 0;
+}
+
+.email-input {
+  flex: 1;                /* takes remaining space */
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 5px 0 0 5px; /* rounded left side */
+  font-size: 1rem;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.email-input::placeholder {
+  color: #999;
+}
+
+.get-started-button {
+  padding: 1rem 2rem;
+  background: #FF4820;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0; /* rounded right side */
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;          /* button does not shrink */
+}
+
+.get-started-button:hover {
+  background: #FF4820;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 700px;
+}
+
+.people {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;        /* space between image and text */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;     /* allow wrapping on small screens */
+}
+
+.people img {
+  width: clamp(4rem, 8vw, 8rem); /* scales between 4rem and 8rem */
+  height: auto;                   /* maintain aspect ratio */
+  object-fit: contain;
+}
+
+.people p {
+  font-size: clamp(0.4rem, 1vw, 0.75rem); /* scales from 0.4rem to 0.75rem */
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* ========================= */
+/* RESPONSIVE DESIGN         */
+/* ========================= */
+
+@media (max-width: 1200px) {
+  .main-header {
+    padding: 0 4rem;
+  }
+
+  .main-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .main-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 2rem;
+    gap: 3rem;
+    margin: 0 auto;
+  }
+
+  .left {
+    max-width: 100%;
+    align-items: center; /* center all content in column layout */
+    text-align: center;  /* text also centered */
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .main-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .input-container {
+    justify-content: center; /* center input/button */
+    margin: 0 auto;          /* optional, ensures perfect centering */ 
+  }
+
+  .email-input {
+    flex: 2;   /* input takes more space */
+  }
+
+  .get-started-button {
+    flex: 1;   /* button takes less space */
+  }
+
+  .right {
+    justify-content: center;
+  }
+
+  .header-img {
+    max-height: 400px;
+  }
+
+  .people {
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .people img {
+    width: 150px;
+    height: auto;
+  }
+
+  .get-started-button {
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    padding: 3rem 1.5rem;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .input-container {
+    width: 100%;
+    max-width: 80%;
+    gap: 0;
+  }
+
+  .email-input {
+    flex: 2;
+    font-size: 0.95rem;
+  }
+
+  .get-started-button {
+    flex: 1;
+    font-size: 0.95rem;
+    border-radius: 0 5px 5px 0;
+  }
+
+  .people {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .people img {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 2rem 1rem;
+  }
+
+  .main-title {
+    font-size: 1.8rem;
+  }
+
+  .main-subtitle {
+    font-size: 1rem;
+  }
+
+  .people img {
+    width: clamp(3rem, 15vw, 4rem);
+  }
+
+  .people p {
+    font-size: clamp(0.6rem, 2vw, 0.75rem);
+  }
+
+  .input-container {
+    width: 100%;
+    max-width: 80%;
+  }
+
+  .email-input {
+    flex: 2;
+    font-size: 0.85rem;
+  }
+
+  .get-started-button {
+    flex: 1;
+    font-size: 0.85rem;
+  }
+}

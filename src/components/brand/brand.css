@@ -1,0 +1,36 @@
+.brand-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+.brand-container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;              /* spacing between logos */
+  flex-wrap: wrap;          /* makes logos wrap on small screens */
+}
+
+
+/* Logo responsiveness */
+.brand-container img {
+  width: clamp(40px, 10vw, 100px); /* responsive logo size */
+  height: auto;
+  object-fit: contain;
+  opacity: 1;
+}
+
+
+/* Small screens */
+@media (max-width: 600px) {
+  .brand-container > div {
+    gap: 1.5rem;
+  }
+
+  .brand-container img {
+    width: clamp(50px, 20vw, 90px);
+  }
+}

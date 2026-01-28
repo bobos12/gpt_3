@@ -1,0 +1,132 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 3rem;
+  background: linear-gradient(90deg, #AE67FA 0%, #F49867 100%);
+  border-radius: 1rem;
+  color: white;
+  margin: 4rem auto;
+  max-width: 1000px;
+  box-shadow: 0 10px 30px rgba(174, 103, 250, 0.3);
+}
+
+.left {
+  flex: 1;
+  text-align: left;
+  max-width: 600px;
+}
+
+.sm-title {
+  margin-bottom: 0.75rem;
+}
+
+.sm-title p {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: rgba(0, 0, 0, 0.9);
+  margin: 0;
+}
+
+.cta-title h1 {
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0;
+  color: #0E0E0E;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.right button {
+  background: #000000;
+  color: white;
+  padding: clamp(0.875rem, 1.5vw, 1.25rem) clamp(1.5rem, 3vw, 2.5rem);
+  border: none;
+  border-radius: 2rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.125rem);
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.right button:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  background: #ebebeb;
+  color: #000000;
+}
+
+.right button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1200px;
+    padding: 3rem 4rem;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .container {
+    max-width: 1400px;
+    padding: 3.5rem 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .left {
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .right {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .right button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .cta-title h1 {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 1.5rem 1rem;
+    margin: 2rem auto;
+  }
+
+  .cta-title h1 {
+    font-size: 1.1rem;
+  }
+
+  .sm-title p {
+    font-size: 0.7rem;
+  }
+
+  .right button {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
